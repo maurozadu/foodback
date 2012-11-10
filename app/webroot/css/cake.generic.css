@@ -23,11 +23,12 @@
 
 /** General Style Info **/
 body {
-	background: #003d4c;
+	background: #fff;
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	margin: 0;
+	zoom: 4;
 }
 a {
 	color: #003d4c;
@@ -115,7 +116,7 @@ div.form,
 div.index,
 div.view {
 	float:right;
-	width:76%;
+	/*width:76%;*/
 	border-left:1px solid #666;
 	padding:10px 2%;
 }

@@ -67,7 +67,18 @@ class DATABASE_CONFIG {
 		'password' => '',
 		'database' => 'foodback',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
+	);
+
+	public $remote = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'foodback_dba',
+		'password' => 'KsqcMl_',
+		'database' => 'foodback_db',
+		'prefix' => '',
+		'encoding' => 'utf8',
 	);
 
 	public $test = array(
@@ -80,4 +91,11 @@ class DATABASE_CONFIG {
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
+
+	function __construct() {
+		if (!Configure::read('isLocal')) {
+			$this->default = $this->remote;
+		}
+	}
+
 }

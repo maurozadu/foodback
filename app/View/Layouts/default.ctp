@@ -6,31 +6,29 @@
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('cake.generic');
+		//echo $this->Html->css('app');
+		//echo $this->Html->css('foundation.min');
+		//echo $this->Html->css('style');
+		//echo $this->Html->script('jquery.mobile-1.2.0.min');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1>foodback logo</h1>
-		</div>
-		<div id="content">
-			<div id="menu">
+
+        <? //<table width="50%" border="0"><tr><td> ?>
+
+			<?php /*<div id="menu">
 				<?php if(AuthComponent::user('id')): ?>
 					Bienvenido <?=$authUser['User']['first_name'];?>
 					<?=$this->Html->link('Logout', $logoutUrl);?>
 				<?php else: ?>
-					<?=$this->Html->link('Login with facebook', $fbLoginUrl);?>
+					<?php //echo $this->Html->link('Login with facebook', $fbLoginUrl);?>
 				<?php endif; ?>
-			</div>
+			</div>*/ ?>
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			foodback
-		</div>
-	</div>
+	<? //</td></tr></table> ?>
 </body>
 </html>

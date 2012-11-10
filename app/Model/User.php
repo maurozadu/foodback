@@ -2,7 +2,7 @@
 
 class User extends AppModel {
 
-	public $hasMany = array('Qualification');
+	//public $hasMany = array('Qualification');
 
 	public $order = 'User.id desc';
 

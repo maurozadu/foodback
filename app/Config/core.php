@@ -301,7 +301,7 @@ Configure::write('Config.language', 'en');
 Configure::write('brwSettings', array(
 	'dateFormat' => 'd.M.Y',
 	'datetimeFormat' => 'd.M.Y h:i a',
-	'companyName' => 'dotspin',
+	'companyName' => 'foodback',
 ));
 
 //facebook api set and initialize
@@ -331,4 +331,3 @@ if (Configure::read('isLocal')) {
 }
 
 Fb::init($fbAppId, $fbAppSecret);
-

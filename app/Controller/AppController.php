@@ -13,6 +13,12 @@ class AppController extends Controller {
 		'DebugKit.Toolbar',
 	);
 
+ 	public $brwMenu = array(
+ 		'Menu' => array(
+ 			'Calificaciones' => 'Qualification',
+ 			'Locales' => 'Venue',
+ 		),
+ 	);
 
 	public function beforeFilter() {
 		if (empty($this->params['plugin'])) {
