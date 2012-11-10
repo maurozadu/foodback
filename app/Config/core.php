@@ -1,18 +1,5 @@
 <?php
-if (substr(env('HTTP_HOST'), -5) == '.test') {
-	Configure::write('isTesting', true);
-} else {
-	Configure::write('isTesting', false);
-}
-
-$isLocal = (
-	env('REMOTE_ADDR') == '127.0.0.1'
-	or substr(env('HTTP_HOST'), -4) == '.dev'
-	or class_exists('ShellDispatcher')
-	or Configure::read('isTesting')
-);
-Configure::write('isLocal', $isLocal);
-
+date_default_timezone_set('America/Argentina/Buenos_Aires');
 /**
  * This is core configuration file.
  *
@@ -21,17 +8,25 @@ Configure::write('isLocal', $isLocal);
  * PHP 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.Config
  * @since         CakePHP(tm) v 0.2.9
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
+$isLocal = (
+	env('REMOTE_ADDR') == '127.0.0.1'
+	or env('REMOTE_ADDR') == '::1'
+	or substr(env('HTTP_HOST'), -4) == '.dev'
+	or class_exists('ShellDispatcher')
+	or Configure::read('isTesting')
+);
+Configure::write('isLocal', $isLocal);
 
 /**
  * CakePHP Debug Level:
@@ -49,7 +44,7 @@ Configure::write('isLocal', $isLocal);
 	if ($isLocal) {
 		Configure::write('debug', 2);
 	} else {
-		Configure::write('debug', 1);
+		Configure::write('debug', 0);
 	}
 
 /**
@@ -59,7 +54,7 @@ Configure::write('isLocal', $isLocal);
  *
  * Options:
  *
- * - `handler` - callback - The callback to handle errors. You can set this to any callback type,
+ * - `handler` - callback - The callback to handle errors. You can set this to any callable type,
  *    including anonymous functions.
  * - `level` - int - The level of errors you are interested in capturing.
  * - `trace` - boolean - Include stack traces for errors in log files.
@@ -151,7 +146,7 @@ Configure::write('isLocal', $isLocal);
  * Defines the default error type when using the log() function. Used for
  * differentiating error logging and debugging. Currently PHP supports LOG_DEBUG.
  */
-	define('LOG_ERROR', 2);
+	define('LOG_ERROR', LOG_ERR);
 
 /**
  * Session configuration.
@@ -202,12 +197,12 @@ Configure::write('isLocal', $isLocal);
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi');
+	Configure::write('Security.salt', 'aslfkjafjas;fjfk;ldsjflasfjlasjfdj');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '76859309657453542496749683645');
+	Configure::write('Security.cipherSeed', '2475293475209375289575757');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -218,6 +213,7 @@ Configure::write('isLocal', $isLocal);
  * timestamping regardless of debug value.
  */
 	//Configure::write('Asset.timestamp', true);
+
 /**
  * Compress CSS output by removing comments, whitespace, repeating tags, etc.
  * This requires a/var/cache directory to be writable by the web server for caching.
@@ -249,70 +245,12 @@ Configure::write('isLocal', $isLocal);
 	//date_default_timezone_set('UTC');
 
 /**
- *
- * Cache Engine Configuration
- * Default settings provided below
- *
- * File storage engine.
- *
- * 	 Cache::config('default', array(
- *		'engine' => 'File', //[required]
- *		'duration'=> 3600, //[optional]
- *		'probability'=> 100, //[optional]
- * 		'path' => CACHE, //[optional] use system tmp directory - remember to use absolute path
- * 		'prefix' => 'cake_', //[optional]  prefix every cache file with this string
- * 		'lock' => false, //[optional]  use file locking
- * 		'serialize' => true, [optional]
- *	));
- *
- * APC (http://pecl.php.net/package/APC)
- *
- * 	 Cache::config('default', array(
- *		'engine' => 'Apc', //[required]
- *		'duration'=> 3600, //[optional]
- *		'probability'=> 100, //[optional]
- * 		'prefix' => Inflector::slug(APP_DIR) . '_', //[optional]  prefix every cache file with this string
- *	));
- *
- * Xcache (http://xcache.lighttpd.net/)
- *
- * 	 Cache::config('default', array(
- *		'engine' => 'Xcache', //[required]
- *		'duration'=> 3600, //[optional]
- *		'probability'=> 100, //[optional]
- *		'prefix' => Inflector::slug(APP_DIR) . '_', //[optional] prefix every cache file with this string
- *		'user' => 'user', //user from xcache.admin.user settings
- *		'password' => 'password', //plaintext password (xcache.admin.pass)
- *	));
- *
- * Memcache (http://www.danga.com/memcached/)
- *
- * 	 Cache::config('default', array(
- *		'engine' => 'Memcache', //[required]
- *		'duration'=> 3600, //[optional]
- *		'probability'=> 100, //[optional]
- * 		'prefix' => Inflector::slug(APP_DIR) . '_', //[optional]  prefix every cache file with this string
- * 		'servers' => array(
- * 			'127.0.0.1:11211' // localhost, default port 11211
- * 		), //[optional]
- * 		'persistent' => true, // [optional] set this to false for non-persistent connections
- * 		'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
- *	));
- *
- *  Wincache (http://php.net/wincache)
- *
- * 	 Cache::config('default', array(
- *		'engine' => 'Wincache', //[required]
- *		'duration'=> 3600, //[optional]
- *		'probability'=> 100, //[optional]
- *		'prefix' => Inflector::slug(APP_DIR) . '_', //[optional]  prefix every cache file with this string
- *	));
- */
-
-/**
  * Pick the caching engine to use.  If APC is enabled use it.
  * If running via cli - apc is disabled by default. ensure it's available and enabled in this case
  *
+ * Note: 'default' and other application caches should be configured in app/Config/bootstrap.php.
+ *       Please check the comments in boostrap.php for more info on the cache engines available
+ *       and their setttings.
  */
 $engine = 'File';
 if (extension_loaded('apc') && function_exists('apc_dec') && (php_sapi_name() !== 'cli' || ini_get('apc.enable_cli'))) {
@@ -325,13 +263,16 @@ if (Configure::read('debug') >= 1) {
 	$duration = '+10 seconds';
 }
 
+// Prefix each application on the same server with a different string, to avoid Memcache and APC conflicts.
+$prefix = 'myapp_';
+
 /**
  * Configure the cache used for general framework caching.  Path information,
  * object listings, and translation cache files are stored with this configuration.
  */
 Cache::config('_cake_core_', array(
 	'engine' => $engine,
-	'prefix' => 'cake_core_',
+	'prefix' => $prefix . 'cake_core_',
 	'path' => CACHE . 'persistent' . DS,
 	'serialize' => ($engine === 'File'),
 	'duration' => $duration
@@ -343,7 +284,7 @@ Cache::config('_cake_core_', array(
  */
 Cache::config('_cake_model_', array(
 	'engine' => $engine,
-	'prefix' => 'cake_model_',
+	'prefix' => $prefix . 'cake_model_',
 	'path' => CACHE . 'models' . DS,
 	'serialize' => ($engine === 'File'),
 	'duration' => $duration
@@ -354,13 +295,40 @@ Cache::config('_cake_model_', array(
  * Own configuration
  */
 
-Configure::write('Config.language', 'es');
+Configure::write('Config.language', 'en');
 //Configure::write('Config.languages', array('es', 'en));
 
-Configure::write('Routing.prefixes', array('brw'));
-
 Configure::write('brwSettings', array(
-	'dateFormat' => 'd.m.Y',
-	'datetimeFormat' => 'd.m.Y H:i',
-	'companyName' => 'Company name (cambiar en Config/core.php)',
+	'dateFormat' => 'd.M.Y',
+	'datetimeFormat' => 'd.M.Y h:i a',
+	'companyName' => 'dotspin',
 ));
+
+//facebook api set and initialize
+
+App::uses('Facebook', 'Lib/Facebook');
+
+class Fb {
+
+	static $lib;
+
+	static function init($appId, $secret) {
+		self::$lib = new Facebook(array('appId' => $appId, 'secret' => $secret));
+	}
+
+	static function lib() {
+		return self::$lib;
+	}
+
+}
+
+if (Configure::read('isLocal')) {
+	$fbAppId = '465588423483871';
+	$fbAppSecret = 'f79f5718073615a9832e747bfa09313a';
+} else {
+	$fbAppId = '';
+	$fbAppSecret = '';
+}
+
+Fb::init($fbAppId, $fbAppSecret);
+

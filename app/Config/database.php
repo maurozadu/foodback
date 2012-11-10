@@ -7,12 +7,12 @@
  * PHP 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.Config
  * @since         CakePHP(tm) v 0.2.9
@@ -65,41 +65,19 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'setup2',
+		'database' => 'foodback',
 		'prefix' => '',
-		'encoding' => 'utf8',
+		//'encoding' => 'utf8',
 	);
 
 	public $test = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'test_setup2',
-		'prefix' => '',
-		'encoding' => 'utf8',
-	);
-
-	public $server = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
+		'login' => 'user',
+		'password' => 'password',
 		'database' => 'test_database_name',
 		'prefix' => '',
-		'encoding' => 'utf8',
+		//'encoding' => 'utf8',
 	);
-
-
-	function __construct() {
-		if (Configure::read('isTesting')) {
-			$this->default = $this->fixtures;
-		}
-		if (!Configure::read('isLocal')) {
-			$this->default = $this->server;
-		}
-	}
-
 }
