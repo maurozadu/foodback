@@ -1,0 +1,10 @@
+/11
+/app/tmp/
+/app/Vendor/
+/app/Plugin/
+/public_html/uploads/
+/public_html/js/fckeditor
+/public_html/js/ckeditor
+/lib
+/vendors
+~$*
