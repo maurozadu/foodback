@@ -28,7 +28,7 @@ class UsersController extends AppController {
 				$this->Session->delete($key);
 			}
 		}
-		$this->redirect(array('controller' => 'home', 'action' => 'home'));
+		$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 	}
 
 

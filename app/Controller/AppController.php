@@ -39,11 +39,10 @@ class AppController extends Controller {
 				),
 				'Form',
 				'Facebook',
-				'Instagram',
 			);
 			$this->Auth->loginAction = array('controller' => 'users', 'action' => 'login', 'u' => false);
 			$this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
-			$this->Auth->loginRedirect = '/';
+			$this->Auth->loginRedirect = array('controller' => 'qualifications', 'action' => 'add');
 			$this->Auth->authError = 'Please login to access';
 			$this->Auth->allow('*');
 		}
@@ -66,7 +65,7 @@ class AppController extends Controller {
 		if (!empty($this->pageTitle)) {
 			$this->pageTitle .= ' - ';
 		}
-		$this->pageTitle .= 'dotspin';
+		$this->pageTitle .= 'foodback';
 		$this->set('title_for_layout', $this->pageTitle);
 	}
 

@@ -123,7 +123,7 @@ Configure::write('isLocal', $isLocal);
  *	`manager_index()` and `/manager/controller/index`
  *
  */
-	//Configure::write('Routing.prefixes', array('admin'));
+	Configure::write('Routing.prefixes', array('u', 'brw'));
 
 /**
  * Turn off all caching application-wide.

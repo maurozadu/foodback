@@ -22,6 +22,8 @@
  * @since         CakePHP(tm) v 0.10.8.2117
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
+CakePlugin::load('DebugKit');
+CakePlugin::load('Brownie', array('bootstrap' => true, 'routes' => true));
 
 /**
  * Cache Engine Configuration
@@ -180,5 +182,9 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
-CakePlugin::load('DebugKit');
-CakePlugin::load('Brownie', array('bootstrap' => true, 'routes' => true));
+
+//genders
+define('MALE', 1);
+define('FEMALE', 2);
+//now
+define('NOW', date('Y-m-d H:i:s'));

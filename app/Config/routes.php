@@ -30,13 +30,12 @@
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-	Router::connect('/califica', array('controller' => 'qualifications', 'action' => 'add'));
+	Router::connect('/califica', array('controller' => 'venues', 'action' => 'code'));
 
 /**
  * Load all plugin routes.  See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
  */
-	CakePlugin::routes();
 
 /**
  * Load the CakePHP default routes. Remove this if you do not want to use

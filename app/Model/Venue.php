@@ -2,6 +2,6 @@
 
 class Venue extends AppModel {
 
-	public $hasMany = array('Venue');
+	public $hasMany = array('Qualification');
 
 }
