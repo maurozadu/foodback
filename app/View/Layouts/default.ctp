@@ -6,6 +6,7 @@
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('style');
 		//echo $this->Html->css('app');
 		//echo $this->Html->css('foundation.min');
 		//echo $this->Html->css('style');

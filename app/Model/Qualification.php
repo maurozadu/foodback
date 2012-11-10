@@ -7,23 +7,21 @@ class Qualification extends AppModel {
 	public $belongsTo = array('Venue', 'Gender');
 
 	public $validate = array(
-		'edad' => array(
-			'rule' => 'notEmpty', 'message' => 'campo requerido',
-		),
-		'lo_mejor' => array(
-			'rule' => 'notEmpty', 'message' => 'campo requerido',
-		),
-		'lo_peor' => array(
-			'rule' => 'notEmpty', 'message' => 'campo requerido',
-		),
-		'gender_id' => array(
-			'rule' => 'notEmpty', 'message' => 'campo requerido',
-		),
+		'edad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		'precio' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		'calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		'calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		'relacion_precio_calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		'puntualidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		'atencion' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		'recomendaria' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'email' => array(
 			array('rule' => 'notEmpty', 'message' => 'campo requerido'),
 			array('rule' => 'email', 'message' => 'email no válido'),
 		),
 	);
 
+	public $brwConfig = array(
+	);
 
 }
