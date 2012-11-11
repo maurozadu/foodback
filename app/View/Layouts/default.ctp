@@ -16,7 +16,7 @@
 		echo $this->fetch('script');
 	?>
 </head>
-<body>
+<body><div id="general">
 
         <? //<table width="50%" border="0"><tr><td> ?>
 
@@ -31,5 +31,7 @@
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 	<? //</td></tr></table> ?>
+	<div class="logo"><?=$this->Html->image('logo.png');?></div>
+</div>
 </body>
 </html>
