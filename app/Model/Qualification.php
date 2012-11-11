@@ -7,7 +7,7 @@ class Qualification extends AppModel {
 	public $belongsTo = array('Venue', 'Gender');
 
 	public $validate = array(
-		'edad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		//'edad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'precio' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
@@ -15,10 +15,10 @@ class Qualification extends AppModel {
 		'puntualidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'atencion' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'recomendaria' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
-		'email' => array(
+		/*'email' => array(
 			array('rule' => 'notEmpty', 'message' => 'campo requerido'),
 			array('rule' => 'email', 'message' => 'email no válido'),
-		),
+		),*/
 	);
 
 	public $brwConfig = array(
