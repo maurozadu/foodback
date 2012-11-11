@@ -1,8 +1,10 @@
-<h2>Califica tu experiencia con <?=$venue['Venue']['name'];?></h2>
+<h2>Califica tu experiencia</h2>
+
+<? /* con <?=$venue['Venue']['name'];?></h2>
 <?php if($venue['Venue']['promotion']): ?>
 	<h3>Promoción:</h3>
 	<p><?=$venue['Venue']['promotion'];?></p>
-<?php endif;
+<?php endif;*/
 $options = array(
 	'options' => array(1 => 'Horrible', 'Malo', 'Bueno', 'Muy Bueno', 'Excelente'),
 	'type' => 'select',
