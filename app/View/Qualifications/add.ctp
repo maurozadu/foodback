@@ -1,5 +1,4 @@
-<h2>Califica tu experiencia</h2>
-
+<h2>¿Cómo fue tu experiencia?</h2>
 <? /* con <?=$venue['Venue']['name'];?></h2>
 <?php if($venue['Venue']['promotion']): ?>
 	<h3>Promoción:</h3>
@@ -12,15 +11,12 @@ $options = array(
 );
 ?>
 <?=$this->Form->create('Qualification'); ?>
-<?=$this->Form->input('Qualification.code', array('value' => $code, 'type' => 'hidden')); ?>
-<?=$this->Form->input('Qualification.venue_id', array('value' => $venue['Venue']['id'], 'type' => 'hidden')); ?>
-<?=$this->Form->input('Qualification.precio', $options); ?>
-<?=$this->Form->input('Qualification.calidad', $options); ?>
-<?=$this->Form->input('Qualification.relacion_precio_calidad', $options); ?>
+<?=$this->Form->input('Qualification.restaurant', array('label' => 'Nombre del bar o restaurant')); ?>
+<?=$this->Form->input('Qualification.relacion_precio_calidad', array_merge($options, array('label' => 'Relación precio-calidad'))); ?>
 <?=$this->Form->input('Qualification.puntualidad', $options); ?>
-<?=$this->Form->input('Qualification.atencion', $options); ?>
+<?=$this->Form->input('Qualification.atencion', array_merge($options, array('label' => 'Atención'))); ?>
 <?=$this->Form->input('Qualification.recomendaria', array(
-	'label' => '¿Nos recomendarías?',
+	'label' => '¿Recomendarías este lugar?',
 	'type' => 'select',
 	'options' => array('1' => 'Sí', '0' => 'No'),
 )); ?>

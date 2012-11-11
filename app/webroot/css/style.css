@@ -28,3 +28,8 @@ form .required label:after {
 p{
 	color: #000 !important;
 }
+
+
+@media only screen and (max-width: 480px) {
+
+}

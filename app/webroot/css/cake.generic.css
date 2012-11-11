@@ -28,7 +28,7 @@ body {
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:16px;
 	margin: 0;
-	zoom: 4;
+	/*zoom: 4;*/
 }
 a {
 	color: #003d4c;
@@ -52,9 +52,10 @@ h1 {
 	font-size: 100%;
 }
 h2 {
-	color: #e32;
+	color: #165369;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
-	font-size: 190%;
+	font-size: 200%;
+	font-weight: bold;
 }
 h3 {
 	color: #2c6877;
@@ -306,7 +307,7 @@ form div.submit {
 }
 label {
 	display: block;
-	font-size: 2em;
+	font-size: 1.5em;
 	margin-bottom:3px;
 }
 input, textarea {
@@ -744,6 +745,6 @@ pre {
 }
 
 div.logo{
-	text-align: center;
+	text-align: left;
 	border-top: 2px #ccc;
 }

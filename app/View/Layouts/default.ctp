@@ -15,8 +15,11 @@
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 </head>
 <body><div id="general">
+	<div class="logo"><?=$this->Html->image('logo.png');?></div>
 
         <? //<table width="50%" border="0"><tr><td> ?>
 
@@ -31,7 +34,6 @@
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 	<? //</td></tr></table> ?>
-	<div class="logo"><?=$this->Html->image('logo.png');?></div>
 </div>
 <script type="text/javascript">
 

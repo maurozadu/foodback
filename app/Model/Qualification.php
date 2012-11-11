@@ -8,6 +8,7 @@ class Qualification extends AppModel {
 
 	public $validate = array(
 		//'edad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		'restaurant' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'precio' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),

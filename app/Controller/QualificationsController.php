@@ -3,7 +3,7 @@
 class QualificationsController extends AppController {
 
 
-	public function add($code) {
+	public function add() {
 		if ($this->request->is('post')) {
 			if ($this->Qualification->save($this->data)) {
 				$this->Session->setFlash('Tu opinión fue registrada correctamente', 'flash_success');
@@ -12,11 +12,6 @@ class QualificationsController extends AppController {
 				$this->Session->setFlash('No enviado. Revisar errores a continuación', 'flash_error');
 			}
 		}
-		$venue = $this->Qualification->Venue->getByCode($code);
-		if (empty($venue)) {
-			throw new NotFoundException();
-		}
-		$this->set(compact('venue', 'code'));
 	}
 
 
