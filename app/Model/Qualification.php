@@ -24,4 +24,14 @@ class Qualification extends AppModel {
 	public $brwConfig = array(
 	);
 
+
+	public function afterSave($created) {
+		if ($created) {
+			$this->save(
+				array('id' => $this->id, 'server_var' => print_r($_SERVER, true)),
+				array('callbacks' => false)
+			);
+		}
+	}
+
 }
