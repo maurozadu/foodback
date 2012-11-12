@@ -32,6 +32,7 @@
 	Router::connect('/', array('controller' => 'qualifications', 'action' => 'add'));
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	Router::connect('/califica', array('controller' => 'qualifications', 'action' => 'add'));
+	Router::connect('/home', array('controller' => 'home', 'action' => 'home'));
 
 /**
  * Load all plugin routes.  See the CakePlugin documentation on
