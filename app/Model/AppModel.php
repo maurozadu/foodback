@@ -1,15 +1,12 @@
 <?php
 
 /*
-<<<<<<< HEAD
 otro comentario
-*/
-=======
 kdj
 fha
 klf
 hkladshdsf*/
->>>>>>> f190322f5321e81102bd06a8d0c9376f67ce3804
+
 
 /**
  * Application model for Cake.
@@ -45,5 +42,11 @@ App::uses('Model', 'Model');
 class AppModel extends Model {
 
 	public $actsAs = array('Brownie.BrwPanel');
+
+
+	public function uno() {
+
+
+	}
 
 }
