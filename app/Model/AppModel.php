@@ -1,6 +1,8 @@
 <?php
 
-
+/*
+otro comentario
+*/
 
 /**
  * Application model for Cake.
