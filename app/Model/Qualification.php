@@ -13,6 +13,7 @@ class Qualification extends AppModel {
 		'calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'relacion_precio_calidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
+		//puntualidad
 		'puntualidad' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'atencion' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
 		'recomendaria' => array('rule' => 'notEmpty', 'message' => 'campo requerido', ),
