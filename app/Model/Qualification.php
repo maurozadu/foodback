@@ -23,6 +23,9 @@ class Qualification extends AppModel {
 	);
 
 	public $brwConfig = array(
+		'paginate' => array('fields' => array(
+			'id', 'email', 'restaurant', 'relacion_precio_calidad', 'puntualidad','atencion', 'recomendaria'
+		)),
 	);
 
 
